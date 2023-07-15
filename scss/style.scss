@@ -1,0 +1,116 @@
+/* VARIABLES */
+/* fonts */
+$fontOswald: 'Oswald', sans-serif;
+$fontUltra: 'Ultra', serif;
+
+/* MIXINS */
+
+
+/* SELECTOR ALL */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+
+/* BODY */
+body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    color: #171B1B;
+}
+
+
+/* CONTAINER */
+.container {
+    width: 100%;
+    max-width: 1170px;
+    
+    margin: 0 auto;
+}
+
+
+/* HEADER */
+.header {
+    width: 100%;
+    min-height: 89px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    &__corner-left {
+        display: flex;
+    }
+    
+    &__logo {
+        font-family: $fontUltra;
+        font-size: 40px;
+        line-height: 48px;
+        
+        color:  #000000;
+        
+        margin-right: 45px;
+    }
+}
+
+
+/* NAV */
+.nav {
+    display: flex;
+    align-self: center;
+    
+    &__link {
+        text-decoration: none;
+        
+        color: #000000;
+        
+        padding-bottom: 0;
+        margin-right: 40px;
+        
+        &:hover {
+            border-bottom: 1px solid black;
+            
+            transition: border .7s linear;
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
