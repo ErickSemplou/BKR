@@ -2,6 +2,9 @@
 /* fonts */
 $fontOswald: 'Oswald', sans-serif;
 $fontUltra: 'Ultra', serif;
+/* colors */
+$whiteColor: #FFFFFF;
+$transparentBlack: #171B1B; 
 
 
 /* MIXINS */
@@ -25,6 +28,34 @@ $fontUltra: 'Ultra', serif;
     line-height: 48px;
 }
 
+@mixin valueCardName {
+    font-family: $fontOswald;
+    font-size: 24px;
+}
+
+@mixin buttonExplore {
+    width: 170px;
+    height: auto;
+
+    background-color: #FFFFFF;
+
+    border: 1px solid $transparentBlack;
+    border-radius: 2px;
+
+    padding: 10px 0;
+    margin: 45px auto;
+
+    cursor: pointer;
+
+    span {
+        font-family: $fontOswald;
+        font-size: 16px;
+        line-height: 24px;
+
+        text-transform: uppercase;
+    }
+}
+
 /* SELECTOR ALL */
 *
 *:before,
@@ -41,7 +72,7 @@ body {
     font-size: 16px;
     font-weight: 400;
     line-height: 32px;
-    color: #171B1B;
+    color: $transparentBlack;
 }
 
 
@@ -256,7 +287,7 @@ body {
         flex: 0 0 50%;
     }
     
-    &__row--right {
+    &__row--left {
         margin-bottom: -45px;
     }
     
@@ -542,7 +573,7 @@ body {
         border: none;
         border-radius: 50%;
         
-        color: #FFFFFF;
+        background-color: #171B1B;
         
         cursor: pointer;
         
@@ -562,16 +593,11 @@ body {
     &__suptitle {
         @include supTitle;
         
-        color: #FFFFFF;
-        
         margin-bottom: 10px;
     }
     
     &__title {
         @include titleHeading;
-        
-        
-        color: #FFFFFF;
         
         margin: 5px 0 25px;
     }
@@ -606,17 +632,432 @@ body {
     }
     
     &__work {
+        margin-top: 35px;
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    &__item-1 {
+        width: 100%;
+        max-width: 740px;
+        min-height: 418px;
+        height: auto;
+        
+        background-image: url(../images/products/bread-1.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        
+        flex-grow: 2;
+        
+        padding: 15px;
+        
+        position: relative;
+        
+        margin-bottom: 20px;
+        
+    }
+    
+    &__item {
+        max-width: 100%;
+        height: auto;
+        max-height: 448px;
+        
+        margin-left: 20px;
+        
+        flex-grow: 1;
+    }
+    
+    &__item:nth-child(3) {
+        margin-left: 0;
+    }
+    
+    &__explore {
+        @include buttonExplore;
+    }
+}
+/* Article 1 */
+.article-1 {
+   
+    &__text {
+        margin-left: 20px;
+
+        position: absolute;
+        bottom: 10px;
+    }
+    
+    &__suptitle {
+        @include supTitle;
+        
+        color: #FFFFFF;
+    }
+    
+    &__point {
+        @include featuresTitleCard;
+        
+        color: #FFFFFF;
+        
+        margin: -10px 0;
+    }
+    
+    &__paragraf {
+        color: rgba(255, 255, 255, 0.5);
+
+    }
+    
+    &__value {
+        position: absolute;
+        right: 30px;
+        bottom: 0px;
+    }
+    
+    &__price {
+        @include featuresTitleCard;
+        
+        color: #FFFFFF;
+    }
+}
+/* Article */
+.article {
+    position: relative;
+    
+    &__img {
+        display: block;
+        width: 370px;
+        max-width: 100%;
+    }
+    
+    &__text {
+        margin-left: 20px;
+    }
+    
+    &__suptitle {
+        @include supTitle;
+        margin: 0;
+        margin-top: 15px;
+        
+    }
+    
+    &__point {
+        @include valueCardName;
+        margin-top: 10px;
+    }
+    
+    &__value {
+        position: absolute;
+        right: 30px;
+        bottom: -50px;
+    }
+    
+    &__price {
+        @include featuresTitleCard;
     }
 }
 
 
+/* PROCESS */
+.process {
+    padding: 45px 0;
+    
+    background-color: #171B1B;
+    
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    &__heading {
+        text-align: center;
+    }
+    
+    &__suptitle {
+        @include supTitle;
+        
+        color: #FFFFFF;
+        
+        margin-bottom: 10px;
+    }
+    
+    &__title {
+        @include titleHeading;
+        
+        color: #FFFFFF;
+        
+        margin: 5px 0 25px;
+    }
+    
+     &__card {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        
+        margin: 35px 0 40px;
+    }
+    
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        flex: 0 0 244px;
+        
+        padding: 15px 25px 35px 15px;
+        
+        transition: .3s linear;
+        transition: background-position 0s;
+        
+        background-color: #FFFFFF;
+        
+        &:hover {
+            margin: -15px 0;
+            
+            background-image: url(../images/card__process/Bread.png);
+            background-position: top right;
+            background-size: auto;
+            background-repeat: no-repeat;
+
+            background-color: #F9BF77;
+        }
+    }
+    
+    &__num {
+        font-family: $fontOswald;
+    }
+    
+    &__point {
+        @include featuresTitleCard;
+        
+        margin-bottom: -5px;
+    }
+    
+    &__paragraf {
+        color: rgba(51, 51, 51, 0.5);
+    }
+    
+}
 
 
+/* RECIPES */
+.recipes {
+    padding: 45px 0;
+    
+    background-color: #171B1B;
+    
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    &__heading {
+        text-align: left;
+    }
+    
+    &__suptitle {
+        @include supTitle;
+        
+        color: #FFFFFF;
+        
+        margin-bottom: 10px;
+    }
+    
+    &__title {
+        @include titleHeading;
+        
+        color: #FFFFFF;
+        
+        margin: 5px 0 25px;
+    }
+    
+    &__works {
+        display: flex;
+        flex-direction: row;
+        
+        margin: 25px 0 30px;
+    }
+    
+    &__row {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &__row-left {
+        width: 570px;
+        
+        height: auto;
+    }
+    
+    &__row-right {
+        width: 580px;
+        
+        flex-wrap: wrap;
+        
+        height: 736px;
+    }
+    
+    &__item {
+        width: 270px;
+        
+        height: 352px;
+        
+        background: #FFFFFF;
+        
+        margin: 0 0 32px 20px;
+    }
+    
+    &__item-1 {
+        min-height: 736px;
+        
+        background: #FFFFFF;
+        
+        margin-left: 0;
+    }
+    
+    
+    &__serving {
+        display: block;
+        max-width: 570px;
+        
+    }
+    
+    &__text {
+        margin: 0 30px;
+    }
+    
+    &__name {
+        @include supTitle;
+    }
+    
+    &__point {
+        @include featuresTitleCard;
+        
+        margin: -10px 0 5px;
+    }
+    
+    &__paragraf {
+        color: #333333;
+        padding-bottom: 10px;
+    }
+    
+    &__time {
+        position: relative;
+    }
+    
+    &__clock {
+        display: block;
+        
+        width: 24px;
+        height: 24px;
+        
+        position: absolute;
+        bottom: 35px;
+        right: 60px;
+    }
+    
+    &__clock-2 {
+        width: 12px;
+        height: 12px;
+        
+        top: 27px;
+        right: 60px;
+    }
+    
+    &__min {
+        @include valueCardName;
+        position: absolute;
+        bottom: 7px;
+        right: 0;
+    }
+    
+    &__min-2 {
+        font-family: DM Sans;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 32px;
+        letter-spacing: 0px;
+        text-align: right;
+        
+        top: 17px;
+    }
+    
+    &__img {
+        display: block;
+        width: 270px;
+    }
+    
+    &__text-minimal {
+        display: flex;
+        justify-content: space-between;
+        
+        position: relative;
+    }
+    
+    &__name-2 {
+        color: #3333337F;
+
+    }
+    
+    &__time-2 {
+        display: flex;
+    }
+    
+    &__txt {
+        font-size: 20px;
+        margin-left: 30px;
+    }
+    
+    &__explore {
+        @include buttonExplore;
+        
+        border: 1px solid #FFFFFF4B;
+        background-color: #171B1B;
+        
+        span {
+            color: #FFFFFF;
+        }
+    }
+
+}
 
 
-
+/* BAKER */
+.baker {
+    padding: 45px 0;
+    
+    &__inner {
+        display: flex; 
+        align-items: flex-end;
+        margin-top: 30px
+    }
+    
+    &__row {
+        flex: 0 0 50%;
+    }
+    
+    &__row-left {
+        margin-top: 35px;
+    }
+    
+    &__heading {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 35px;
+    }
+    
+    &__suptitle {
+        @include supTitle;
+        
+        margin: 0;
+    }
+    
+    &__title {
+        @include titleHeading;
+        
+        margin: 10px 0 0;
+    }
+}
 
 
 
